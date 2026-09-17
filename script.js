@@ -40,7 +40,20 @@ document.addEventListener('DOMContentLoaded', () => {
         tasksList.removeChild(li);
       });
 
+      const completeBtn = document.createElement('button');
+      completeBtn.type = 'button';
+      completeBtn.className = 'btn btn-complete';
+      completeBtn.setAttribute('aria-label', 'Marcar tarea como completada');
+      completeBtn.textContent = 'Completar';
+
+      completeBtn.addEventListener('click', () => {
+        li.classList.toggle('completed');
+        completeBtn.textContent = li.classList.contains('completed') ? 'Deshacer' : 'Completar';
+        completeBtn.setAttribute('aria-label', li.classList.contains('completed') ? 'Desmarcar tarea como completada' : 'Marcar tarea como completada');
+      });
+
       li.appendChild(taskText);
+      li.appendChild(completeBtn);
       li.appendChild(deleteBtn);
       tasksList.appendChild(li);
       nuevaTareaInput.value = '';

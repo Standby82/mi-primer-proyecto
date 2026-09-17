@@ -129,6 +129,15 @@ body {
   margin-right: 0.5rem;
 }
 
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.task-item.completed {
+  background-color: #e2e8f0;
+}
+
 .btn-delete {
   background-color: transparent;
   color: var(--text-muted);
@@ -137,6 +146,21 @@ body {
   border: 1px solid var(--border-color);
   border-radius: 6px;
   cursor: pointer;
+}
+
+.btn-complete {
+  background-color: transparent;
+  color: var(--primary-color);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-complete:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
 }
 
 .btn-delete:hover {
